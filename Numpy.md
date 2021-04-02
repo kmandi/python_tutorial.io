@@ -89,3 +89,29 @@ dtype('int64')
 
 ```
 ## Array Creation
+There are several ways to create arrays.
+
+For example, you can create an array from a regular Python list or tuple using the array function. 
+The type of the resulting array is deduced from the type of the elements in the sequences.
+```
+>>> import numpy as np
+>>> a = np.array([2,4,6])
+>>> a
+array([2, 4, 6])
+>>> a.dtype
+dtype('int64')
+>>> b = np.array([1.2, 3.5, 5.1, 4.2, 6.9])
+>>> b.dtype
+dtype('float64')
+```
+A frequent error consists in calling array with multiple arguments, rather than providing a single sequence as an argument.
+```
+>>> x = np.array(1, 2, 3, 4)                            #THIS IS WRONG
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: array() takes from 1 to 2 positional arguments but 4 were given
+>>> x = np.array([1, 2, 3, 4])                          #THIS IS RIGHT
+>>> x
+array([1, 2, 3, 4])
+```
+```import matplotlib.pyplot as plt```
