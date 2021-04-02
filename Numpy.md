@@ -162,4 +162,3 @@ numpy.random.Generator.rand, numpy.random.Generator.randn,
 [fromfile](https://numpy.org/doc/stable/reference/generated/numpy.fromfile.html#numpy.fromfile)
 
 
-
