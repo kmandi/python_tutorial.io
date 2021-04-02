@@ -88,7 +88,7 @@ dtype('int64')
 <memory at 0x7f1764151380> 
 
 ```
-## Array Creation
+## [Array](http://scipy-lectures.org/intro/numpy/array_object.html) Creation
 There are several ways to create arrays.
 
 For example, you can create an array from a regular Python list or tuple using the array function. 
@@ -114,4 +114,51 @@ TypeError: array() takes from 1 to 2 positional arguments but 4 were given
 >>> x
 array([1, 2, 3, 4])
 ```
-```import matplotlib.pyplot as plt```
+array transforms sequences of sequences into two-dimensional arrays, sequences of sequences of sequences into three-dimensional arrays, and so on.
+```
+>>> y = np.array([(1, 3, 5), (2, 4, 6)])
+>>> y
+array([[1, 3, 5],
+       [2, 4, 6]])
+```
+The type of the array can also be explicitly specified at creation time:
+```
+>>> m = np.array([(1, 3, 5), (2, 4, 6)], dtype=complex)
+>>> m
+array([[1.+0.j, 3.+0.j, 5.+0.j],
+       [2.+0.j, 4.+0.j, 6.+0.j]])
+```
+The function ```zeros``` creates an array full of zeros, the function ones creates an array full of ones, and the function empty creates an array whose initial content is random and depends on the state of the memory. By default, the dtype of the created array is ```float64```.
+```
+>>> np.zeros((2,3))
+array([[0., 0., 0.],
+       [0., 0., 0.]])
+>>> np.ones((2,3,5), dtype=np.int32)                            # dtype can also be specified
+array([[[1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1]],
+
+       [[1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1]]], dtype=int32)
+>>> np.empty( (2,3) )                                          # uninitialized
+array([[6.93223152e-310, 6.93223152e-310, 0.00000000e+000],
+       [0.00000000e+000, 8.92896519e+271, 7.20185289e+159]])
+
+```
+See More :
+[array](https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array), 
+[zeros](https://numpy.org/doc/stable/reference/generated/numpy.zeros.html#numpy.zeros), 
+[zeros_like](https://numpy.org/doc/stable/reference/generated/numpy.zeros_like.html#numpy.zeros_like), 
+[ones](https://numpy.org/doc/stable/reference/generated/numpy.ones.html#numpy.ones), 
+[ones_like](https://numpy.org/doc/stable/reference/generated/numpy.ones_like.html#numpy.ones_like), 
+[empty](https://numpy.org/doc/stable/reference/generated/numpy.empty.html#numpy.empty), 
+[empty_like](https://numpy.org/doc/stable/reference/generated/numpy.empty_like.html#numpy.empty_like), 
+[arange](https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange), 
+[linspace](https://numpy.org/doc/stable/reference/generated/numpy.linspace.html#numpy.linspace), 
+numpy.random.Generator.rand, numpy.random.Generator.randn, 
+[fromfunction](https://numpy.org/doc/stable/reference/generated/numpy.fromfunction.html#numpy.fromfunction), 
+[fromfile](https://numpy.org/doc/stable/reference/generated/numpy.fromfile.html#numpy.fromfile)
+
+
+
