@@ -66,7 +66,7 @@ Normally, we won’t need to use this attribute because we will access the eleme
 
 ## An Example
 
-```
+```python
 
 >>> import numpy as np
 >>> a = np.arange(12).reshape(3, 4)
@@ -93,7 +93,7 @@ There are several ways to create arrays.
 
 For example, you can create an array from a regular Python list or tuple using the array function. 
 The type of the resulting array is deduced from the type of the elements in the sequences.
-```
+```python
 >>> import numpy as np
 >>> a = np.array([2,4,6])
 >>> a
@@ -105,7 +105,7 @@ dtype('int64')
 dtype('float64')
 ```
 A frequent error consists in calling array with multiple arguments, rather than providing a single sequence as an argument.
-```
+```python
 >>> x = np.array(1, 2, 3, 4)                            #THIS IS WRONG
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -115,21 +115,21 @@ TypeError: array() takes from 1 to 2 positional arguments but 4 were given
 array([1, 2, 3, 4])
 ```
 array transforms sequences of sequences into two-dimensional arrays, sequences of sequences of sequences into three-dimensional arrays, and so on.
-```
+```python
 >>> y = np.array([(1, 3, 5), (2, 4, 6)])
 >>> y
 array([[1, 3, 5],
        [2, 4, 6]])
 ```
 The type of the array can also be explicitly specified at creation time:
-```
+```python
 >>> m = np.array([(1, 3, 5), (2, 4, 6)], dtype=complex)
 >>> m
 array([[1.+0.j, 3.+0.j, 5.+0.j],
        [2.+0.j, 4.+0.j, 6.+0.j]])
 ```
 The function ```zeros``` creates an array full of zeros, the function ones creates an array full of ones, and the function empty creates an array whose initial content is random and depends on the state of the memory. By default, the dtype of the created array is ```float64```.
-```
+```python
 >>> np.zeros((2,3))
 array([[0., 0., 0.],
        [0., 0., 0.]])
